@@ -15,7 +15,23 @@ def hoge(request):
     return f'hoge!'
 ```
 
-仮にこうして`/hoge`を呼んでもとしてもCloud Functionsの関数が呼び出されることはない。
+仮にこうして`/hoge`を呼んでも`hoge`は呼ばれず`Hello World!`が呼び出される。
 
 なぜならwsgiが動いていないからである。
 
+
+## wsgi
+
+仕様書はここを読むこと
+
+https://www.python.org/dev/peps/pep-3333/
+
+あるいはここのチュートリアルでも可
+
+http://wsgi.tutorial.codepoint.net/intro
+
+# メモ
+
+ - サーバレスでWebアプリケーションサーバを使う方法を考える。
+ - ngrok(リバースプロキシ)を使う手もあるらしい。
+ - ステートフルWEBアプリ
