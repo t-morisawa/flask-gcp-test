@@ -29,7 +29,7 @@ def get_view_function(url, method='GET'):
 
 def hello_world(request):
     # return redirect()
-    return get_view_function(request['path'])[0]()
+    return get_view_function(request.path)[0]()
 
 
 @app.route('/')
@@ -40,8 +40,3 @@ def index():
 @app.route('/hoge')
 def hoge():
     return f'hoge!'
-
-
-if __name__ == '__main__':
-    request = {'path': 'hoge'}
-    print(hello_world(request))
