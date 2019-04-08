@@ -1,3 +1,4 @@
+import json
 from flask import Flask, redirect
 from werkzeug.routing import RequestRedirect, MethodNotAllowed, NotFound
 
@@ -29,14 +30,22 @@ def get_view_function(url, method='GET'):
 
 def hello_world(request):
     # return redirect()
-    return get_view_function(request.path)[0]()
+    return get_view_function(request.path)[0](request)
 
 
 @app.route('/')
-def index():
-    return f'here is index'
+def index(request):
+    return f'<a href="https://www.google.com/">here is index</a>'
 
 
 @app.route('/hoge')
-def hoge():
+def hoge(request):
     return f'hoge!'
+
+@app.route('/cookie')
+def print_cookie(request):
+    return json.dumps(request.cookies)
+
+@app.route('/printreq')
+def print_header(request):
+    return str(request.headers.to_wsgi_list())
