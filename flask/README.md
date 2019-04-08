@@ -87,3 +87,17 @@ def hoge(request):
 
 https://stackoverflow.com/questions/38488134/get-the-flask-view-function-that-matches-a-url
 
+## 第三弾
+
+TODO できたのでメモしておく
+
+TODO クッキーやヘッダーを送信できているのか確認しておく（リクエスト情報をここのメソッドが取り出すことはできるのか）
+
+TODO メインプロセスでwebサーバを立てて、そこにリクエストするといったことは可能？
+
+TODO Lambda + Flask, Lambda + Djangoも触ってみたい
+
+ - serverless-wsgiで動かす例は説明が少なく理解できなかった。
+ - Flaskのルーティング機能が使えなかったとしても別に他の機能が使えるのであれば問題ないのでは。
+
+TODO Cloud Functions + expressの例も探してみたい
