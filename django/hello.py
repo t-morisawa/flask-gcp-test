@@ -10,12 +10,19 @@ def index(request):
     import random
     return HttpResponse('Hello World. random={}\n'.format(random.random()))
 
+
+def hoge(request):
+    import random
+    return HttpResponse('Hello Hoge World. random={}\n'.format(random.random()))
+
+
 urlpatterns = [
     url(r'^$', index),
+    url(r'^hoge$', hoge),
 ]
 
 if __name__ == "__main__":
-    from django.core.management import execute_from_command_line
+    from django.core import management
     from django.conf import settings
 
     settings.configure(
@@ -27,4 +34,6 @@ if __name__ == "__main__":
         )
     )
     # using this via 'python server-example.py runserver'
-    execute_from_command_line(sys.argv)
+    management.execute_from_command_line(sys.argv)
+
+    # management.call_command('runserver')
